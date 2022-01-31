@@ -69,24 +69,8 @@ void HAL_MspInit(void)
 
   __HAL_RCC_SYSCFG_CLK_ENABLE();
   __HAL_RCC_PWR_CLK_ENABLE();
-  __HAL_RCC_GTZC_CLK_ENABLE();
 
   /* System interrupt init*/
-
-  /** Disable the internal Pull-Up in Dead Battery pins of UCPD peripheral
-  */
-  HAL_PWREx_DisableUCPDDeadBattery();
-  /** PWR Non-Privilege/Non-Secure Items Configurations
-  */
-  HAL_PWR_ConfigAttributes(PWR_WKUP1, PWR_NSEC |PWR_NPRIV);
-  HAL_PWR_ConfigAttributes(PWR_WKUP2, PWR_NSEC |PWR_NPRIV);
-  HAL_PWR_ConfigAttributes(PWR_WKUP3, PWR_NSEC |PWR_NPRIV);
-  HAL_PWR_ConfigAttributes(PWR_WKUP4, PWR_NSEC |PWR_NPRIV);
-  HAL_PWR_ConfigAttributes(PWR_WKUP5, PWR_NSEC |PWR_NPRIV);
-  HAL_PWR_ConfigAttributes(PWR_VDM, PWR_NSEC |PWR_NPRIV);
-  HAL_PWR_ConfigAttributes(PWR_APC, PWR_NSEC |PWR_NPRIV);
-  HAL_PWR_ConfigAttributes(PWR_LPM, PWR_NSEC |PWR_NPRIV);
-  HAL_PWR_ConfigAttributes(PWR_VB, PWR_NSEC |PWR_NPRIV);
 
   /* USER CODE BEGIN MspInit 1 */
 
